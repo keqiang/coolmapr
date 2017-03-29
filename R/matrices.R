@@ -1,5 +1,14 @@
 coolmap.matrix.list <- function () {
+  response <- httr::GET(coolmap_matrix_url)
 
+  httr::content(response)
+}
+
+coolmap.matrix.get <- function (id) {
+  url <- paste(coolmap_matrix_url, "/", id, sep = "")
+  response <- httr::GET(url)
+
+  httr::content(response)
 }
 
 coolmap.matrix.load <- function (matrix, name = NULL)
