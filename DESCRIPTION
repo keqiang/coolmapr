@@ -1,0 +1,11 @@
+Package: coolmapr
+Type: Package
+Title: CoolMap R Library
+Version: 0.1.0
+Author: Keqiang Li
+Maintainer: Keqiang Li <lkq@umich.edu>
+Description: R library for interacting with CoolMap Desktop Application.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: httr
