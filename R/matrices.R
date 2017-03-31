@@ -1,5 +1,6 @@
 coolmap.matrix.list <- function () {
   response <- httr::GET(coolmap_matrix_url)
+
   httr::content(response)
 }
 
