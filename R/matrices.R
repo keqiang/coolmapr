@@ -4,8 +4,8 @@ coolmap.matrix.list <- function () {
   httr::content(response)
 }
 
-coolmap.matrix.get <- function (id) {
-  url <- paste(coolmap_matrix_url, "/", id, sep = "")
+coolmap.matrix.get <- function (id, data_scope = "leaf") {
+  url <- paste(coolmap_matrix_url, "/", id, "?dataScope=", data_scope, sep = "")
   response <- httr::GET(url)
 
   httr::content(response)

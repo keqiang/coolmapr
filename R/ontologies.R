@@ -4,8 +4,8 @@ coolmap.ontologies.list <- function () {
   httr::content(response)
 }
 
-coolmap.ontology.get <- function (id) {
-  url <- paste(coolmap_ontology_url, "/", id, sep = "")
+coolmap.ontologies.get <- function (id, format = "pairwise") {
+  url <- paste(coolmap_ontology_url, "/", id, "?format=", format, sep = "")
   response <- httr::GET(url)
 
   httr::content(response)
