@@ -1,17 +1,17 @@
-coolmap.matrix.list <- function () {
+coolmap.matrices.list <- function () {
   response <- httr::GET(coolmap_matrix_url)
 
   httr::content(response)
 }
 
-coolmap.matrix.get <- function (id, data_scope = "leaf") {
+coolmap.matrices.get <- function (id, data_scope = "leaf") {
   url <- paste(coolmap_matrix_url, "/", id, "?dataScope=", data_scope, sep = "")
   response <- httr::GET(url)
 
   httr::content(response)
 }
 
-coolmap.matrix.load <- function (matrix, name = NULL)
+coolmap.matrices.load <- function (matrix, name = NULL)
 {
   # get the dimension of the matrix
   row_number <- nrow(matrix)
