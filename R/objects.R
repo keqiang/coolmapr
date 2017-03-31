@@ -1,0 +1,3 @@
+coolmap.objects.list <- function () {
+
+}
