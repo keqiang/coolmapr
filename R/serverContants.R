@@ -12,3 +12,12 @@ lockBinding("coolmap_property_table_url", environment())
 
 coolmap_object_url <- paste(coolmap_url, "/objects", sep = "")
 lockBinding("coolmap_object_url", environment())
+
+url_param_data_scope = "dataScope";
+lockBinding("url_param_data_scope", environment())
+
+url_arg_data_scope_displayed <- "displayed";
+lockBinding("url_arg_data_scope_displayed", environment())
+
+url_arg_value_data_scope_leaf <- "leaf";
+lockBinding("url_arg_data_scope_leaf", environment())
