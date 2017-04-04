@@ -19,5 +19,5 @@ lockBinding("url_param_data_scope", environment())
 url_arg_data_scope_displayed <- "displayed";
 lockBinding("url_arg_data_scope_displayed", environment())
 
-url_arg_value_data_scope_leaf <- "leaf";
+url_arg_data_scope_leaf <- "leaf";
 lockBinding("url_arg_data_scope_leaf", environment())
