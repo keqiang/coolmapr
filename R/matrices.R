@@ -52,6 +52,11 @@ coolmap.matrices.col_vectors.selections <- function (matrix_id, data_scope = url
   getRequest(url)
 }
 
+coolmap.matrices.cells.hover <- function (matrix_id, row_node, col_node) {
+  url <- paste(coolmap_matrix_url, "/", matrix_id, "/cells/hover", "?", url_param_row_node, "=", row_node, "&", url_param_col_node, "=", col_node, sep = "")
+  getRequest(url)
+}
+
 coolmap.matrices.load <- function (matrix, name = NULL)
 {
   # get the dimension of the matrix

@@ -13,11 +13,17 @@ lockBinding("coolmap_property_table_url", environment())
 coolmap_object_url <- paste(coolmap_url, "/objects", sep = "")
 lockBinding("coolmap_object_url", environment())
 
-url_param_data_scope = "dataScope";
+url_param_data_scope = "dataScope"
 lockBinding("url_param_data_scope", environment())
 
-url_arg_data_scope_displayed <- "displayed";
+url_param_row_node = "rowNode"
+lockBinding("url_param_row_node", environment())
+
+url_param_col_node = "columnNode"
+lockBinding("url_param_col_node", environment())
+
+url_arg_data_scope_displayed <- "displayed"
 lockBinding("url_arg_data_scope_displayed", environment())
 
-url_arg_data_scope_leaf <- "leaf";
+url_arg_data_scope_leaf <- "leaf"
 lockBinding("url_arg_data_scope_leaf", environment())
