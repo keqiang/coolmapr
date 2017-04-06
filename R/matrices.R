@@ -12,24 +12,46 @@ coolmap.matrices.selections <- function (matrix_id, data_scope = url_arg_data_sc
   getRequest(url)
 }
 
+coolmap.matrices.selections.set <- function(matrix_id, node_list) {
+  if (!is.null(node_list)) {
+    url <- paste(coolmap_matrix_url, "/", matrix_id, "/selections", sep = "")
+    body <- jsonlite::toJSON(node_list);
+    postRequest(url, body)
+  }
+}
+
+coolmap.matrices.selections.intersections.set <- function(matrix_id, row_ids = c(), col_ids = c()) {
+  url <- paste(coolmap_matrix_url, "/", matrix_id, "/selections", sep = "")
+  param_list <- list()
+  if (!is.null(row_ids)) {
+    param_list["row_ids"] <- row_ids
+  }
+
+  if (!is.null(col_ids)) {
+    param_list["column_ids"] <- col_ids;
+  }
+  body <- jsonlite::toJSON(param_list);
+  postRequest(url, body)
+}
+
 coolmap.matrices.row_ids <- function (matrix_id, data_scope = url_arg_data_scope_displayed) {
   url <- paste(coolmap_matrix_url, "/", matrix_id, "/rows", "?", url_param_data_scope, "=", data_scope, sep = "")
-  unlist(getRequest(url))
+  getRequest(url)
 }
 
 coolmap.matrices.col_ids <- function (matrix_id, data_scope = url_arg_data_scope_displayed) {
   url <- paste(coolmap_matrix_url, "/", matrix_id, "/columns", "?", url_param_data_scope, "=", data_scope, sep = "")
-  unlist(getRequest(url))
+  getRequest(url)
 }
 
 coolmap.matrices.row_ids.selections <- function (matrix_id, data_scope = url_arg_data_scope_displayed) {
   url <- paste(coolmap_matrix_url, "/", matrix_id, "/rows/selections", "?", url_param_data_scope, "=", data_scope, sep = "")
-  unlist(getRequest(url))
+  getRequest(url)
 }
 
 coolmap.matrices.col_ids.selections <- function (matrix_id, data_scope = url_arg_data_scope_displayed) {
   url <- paste(coolmap_matrix_url, "/", matrix_id, "/columns/selections", "?", url_param_data_scope, "=", data_scope, sep = "")
-  unlist(getRequest(url))
+  getRequest(url)
 }
 
 coolmap.matrices.row_vectors.get <- function (matrix_id, row_index, data_scope = url_arg_data_scope_displayed) {
