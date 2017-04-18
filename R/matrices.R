@@ -12,10 +12,11 @@ coolmap.matrices.selections <- function (matrix_id, data_scope = url_arg_data_sc
   getRequest(url)
 }
 
-coolmap.matrices.selections.set <- function(matrix_id, node_list) {
-  if (!is.null(node_list)) {
+coolmap.matrices.selections.set <- function(matrix_id, node_ids) {
+  if (!is.null(node_ids)) {
     url <- paste(coolmap_matrix_url, "/", matrix_id, "/selections", sep = "")
-    body <- jsonlite::toJSON(node_list)
+    param_list <- list('node_ids' = node_ids)
+    body <- jsonlite::toJSON(param_list)
     postRequest(url, body)
   }
 }
@@ -24,11 +25,11 @@ coolmap.matrices.selections.intersections.set <- function(matrix_id, row_ids = N
   url <- paste(coolmap_matrix_url, "/", matrix_id, "/selections", sep = "")
   param_list <- list()
   if (!is.null(row_ids)) {
-    param_list["row_ids"] <- row_ids
+    param_list$row_ids <- row_ids
   }
 
   if (!is.null(col_ids)) {
-    param_list["column_ids"] <- col_ids
+    param_list$column_ids <- col_ids
   }
   body <- jsonlite::toJSON(param_list)
   postRequest(url, body)
